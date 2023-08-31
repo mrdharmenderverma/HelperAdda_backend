@@ -7,19 +7,31 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $email = $_POST["email"];
     $password = $_POST["password"];
     $cpassword = $_POST["cpassword"];
-    $exists=false;
-    
-    if(($password == $cpassword) && $exists==false){
+    // $exists=false;
+
+
+    // Check whether this username Exists
+    $existSql = "SELECT * FROM `users` WHERE username = '$username'";
+    $result = mysqli_query($conn, $existSql);
+    $numExistRow = mysqli_num_rows($result);
+    if($numExistRow > 0 ){
+      $showError = "Username Already Exists";
+    }
+    else{
+      if(($password == $cpassword)){
         $sql = "INSERT INTO `users` ( `username`, `email`,  `password`, `dt`) VALUES ('$username', '$email', '$password', current_timestamp())";
         $result = mysqli_query($conn, $sql);
         if ($result){
-            // $showAlert = true;
-            header ('location: login.php');
+            $showAlert = true;
+            // header ('location: login.php');
         }
     }
     else{
         $showError = "Passwords do not match";
     }
+
+    }    
+    
 }
     
 ?>
@@ -41,8 +53,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if($showError){
     echo ' <div class="alert alert-danger alert-dismissible fade show" role="alert">
         <strong>Error!</strong> '. $showError.'
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">×</span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+
         </button>
     </div> ';
     }
@@ -97,7 +109,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms" />
                     <label class="form-check-label" for="terms-conditions">
                       I agree to
-                      <a href="javascript:void(0);">privacy policy & terms</a>
+                      <a href="javascript:void(0);" required>Terms & Policy</a>
                     </label>
                   </div>
                 </div>
