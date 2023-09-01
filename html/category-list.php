@@ -1,14 +1,12 @@
+<?php include 'login/database/_dbconnect.php';  
+ ?>
 <!DOCTYPE html>
-
-
-<!-- beautify ignore:start -->
 <html
   lang="en"
   class="light-style layout-menu-fixed"
   dir="ltr"
   data-theme="theme-default"
   data-assets-path="../assets/"
-  data-template="vertical-menu-template-free"
 >
     <!-- Head -->
     <?php require 'Components/head.php';?>
@@ -49,120 +47,91 @@
                         <th>Actions</th>
                       </tr>
                     </thead>
+                    
+                    <?php 
+                        $selectQuery = "SELECT * FROM `categories`";
+                        $sql = mysqli_query($conn, $selectQuery);
+
+                        while($num = mysqli_fetch_assoc($sql))
+                        {                        
+                    ?>                    
                     <tbody class="table-border-bottom-0">
                         <tr>
-                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>1</strong></td>
-                            <td>Cook</td>
+                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong><?php echo $num['id'];?></strong></td>
+                            <td><?php echo $num['category'];?></td>
                             <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br>Sapiente incidunt reiciendis quod molestiae nesciunt <br>qui eos dicta sequi eaque sed!</td>
-                            <!-- <td><img src="../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle" /></td> -->
-                            <td>
-                                <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                                    <li
-                                    data-bs-toggle="tooltip"
-                                    data-popup="tooltip-custom"
-                                    data-bs-placement="top"
-                                    class="avatar avatar-xs pull-up"
-                                    title="Cook"
-                                    >
-                                    <img src="../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle" />
-                                    </li>                          
-                                    
-                                </ul>
+                            <td><img src="../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle" style="max-width:50%;"/></td>
+                            <td><?php if($num['active'] >  0){ echo $inactive = "<span class='badge bg-label-primary me-1'>Active</span>"; }else
+                                {
+                                    echo $active ="<span class='badge bg-label-warning me-1'>InActive</span>";
+                                }?>
                             </td>
-                            <td><span class="badge bg-label-primary me-1">Active</span></td>
                             <td>
                                 <div class="dropdown">
                                     <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                                     <i class="bx bx-dots-vertical-rounded"></i>
                                     </button>
                                     <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="javascript:void(0);"
-                                        ><i class="bx bx-edit-alt me-1"></i> Edit</a
+                                    <a class="dropdown-item" href="?sno=<?php echo $num['id'];?>"
+                                    data-bs-toggle="modal" data-bs-target="#basicModal"><i class="bx bx-edit-alt me-1"></i> Edit</a
                                     >
-                                    <a class="dropdown-item" href="javascript:void(0);"
+                                    <a class="dropdown-item" href="<?php echo $num['id'];?>"
                                         ><i class="bx bx-trash me-1"></i> Delete</a
                                     >
                                     </div>
                                 </div>
                             </td>
-                        </tr>                    
-                        <tr>
-                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>1</strong></td>
-                            <td>Cook</td>
-                            <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br>Sapiente incidunt reiciendis quod molestiae nesciunt <br>qui eos dicta sequi eaque sed!</td>
-                            <td>
-                                <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                                    <li
-                                    data-bs-toggle="tooltip"
-                                    data-popup="tooltip-custom"
-                                    data-bs-placement="top"
-                                    class="avatar avatar-xs pull-up"
-                                    title="Lilian Fuller"
-                                    >
-                                    <img src="../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle" />
-                                    </li>                          
-                                    
-                                </ul>
-                            </td>
-                            <td><span class="badge bg-label-primary me-1">Active</span></td>
-                            <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                    <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="javascript:void(0);"
-                                        ><i class="bx bx-edit-alt me-1"></i> Edit</a
-                                    >
-                                    <a class="dropdown-item" href="javascript:void(0);"
-                                        ><i class="bx bx-trash me-1"></i> Delete</a
-                                    >
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>                    
-                        <tr>
-                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>1</strong></td>
-                            <td>Cook</td>
-                            <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br>Sapiente incidunt reiciendis quod molestiae nesciunt <br>qui eos dicta sequi eaque sed!</td>
-                            <td>
-                                <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                                    <li
-                                    data-bs-toggle="tooltip"
-                                    data-popup="tooltip-custom"
-                                    data-bs-placement="top"
-                                    class="avatar avatar-xs pull-up"
-                                    title="Lilian Fuller"
-                                    >
-                                    <img src="../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle" />
-                                    </li>                          
-                                    
-                                </ul>
-                            </td>
-                            <td><span class="badge bg-label-primary me-1">Active</span></td>
-                            <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                    <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="javascript:void(0);"
-                                        ><i class="bx bx-edit-alt me-1"></i> Edit</a
-                                    >
-                                    <a class="dropdown-item" href="javascript:void(0);"
-                                        ><i class="bx bx-trash me-1"></i> Delete</a
-                                    >
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>                    
+                        </tr>                  
                     </tbody>
+                    <?php }?>                    
                   </table>
                 </div>
               </div>
               <!--/ Bootstrap Dark Table -->              
             </div>
             <!-- / Content -->
+            
+            <div class="mt-3">
+                <!-- Button trigger modal -->
+           
+
+                <!-- Modal -->
+                <div class="modal fade" id="basicModal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel1">Update Category</h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                        </div>
+                        <div class="modal-body">
+                        <div class="row">
+                            <div class="col mb-3">
+                            <label for="categoryName" class="form-label">Category Name</label>
+                            <input type="text" id="categoryName" class="form-control" placeholder="Category Name" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col mb-3">
+                            <label for="categoryName" class="form-label">Category Name</label>
+                            <input type="text" id="categoryName" class="form-control" placeholder="Category Name" />
+                            </div>
+                        </div>                        
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                            Close
+                        </button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>                
 
             <!-- Footer -->
             <?php require 'Components/footer.php';?>
