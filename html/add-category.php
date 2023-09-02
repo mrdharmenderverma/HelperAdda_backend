@@ -1,5 +1,6 @@
-<?php include 'login/database/_dbconnect.php';  
-  // $result = mysqli_query($conn, "SELECT * FROM `categories` WHERE parent_id = 0");
+<?php 
+    include 'login/database/_dbconnect.php';  
+    // $result = mysqli_query($conn, "SELECT * FROM `categories` WHERE parent_id = 0");
   $result = mysqli_query($conn, "SELECT * FROM `categories`");
 ?>
 
