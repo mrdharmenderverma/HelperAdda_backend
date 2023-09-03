@@ -5,7 +5,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Helper Adda</title>
+    <title><?php if(isset($title)){echo $title;} else {echo 'Helper Adda';} ?></title>
 
     <meta name="description" content="" />
 

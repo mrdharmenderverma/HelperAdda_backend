@@ -8,7 +8,7 @@
 <html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../assets/"
     >
 <!-- Head -->
-<?php require 'Components/head.php';?>
+<?php $title ='Add Category - Helper Adda'; require 'Components/head.php';?>
 <!-- /Head -->
 
 <body>

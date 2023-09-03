@@ -8,7 +8,7 @@
   data-template="vertical-menu-template-free"
 >
   <!-- Head -->
-  <?php require 'Components/head.php';?>
+  <?php $title ='Service Provider - Helper Adda'; require 'Components/head.php';?>
   <!-- /Head -->
 
   <body>

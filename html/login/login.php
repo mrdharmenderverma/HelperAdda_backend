@@ -40,7 +40,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   data-template="vertical-menu-template-free"
 >
   <!-- Head -->
-  <?php include 'head.php'?>
+  <?php $title = 'Login - Helper Adda'; include 'head.php'?>
   <!-- Head/ -->
 
   <body>

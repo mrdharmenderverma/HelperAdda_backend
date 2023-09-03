@@ -39,7 +39,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <!DOCTYPE html>
 <html lang="en" class="light-style customizer-hide" dir="ltr" data-theme="theme-default" data-assets-path="../../assets/"  data-template="vertical-menu-template-free">
   <!-- Head -->
-  <?php include 'head.php'?>
+  <?php $title = 'SignUp - Helper Adda'; include 'head.php'?>
   <!-- Head/ -->
   <body>
   <?php
