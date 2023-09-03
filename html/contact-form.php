@@ -6,7 +6,7 @@
   data-template="vertical-menu-template-free"
 >
   <!-- Head -->
-  <?php $title ='Contact Form - Helper Adda'; require 'Components/head.php';?>
+  <?php $title ='Contact Form - Helper Adda'; $page = 'contact Form'; $active = 'form'; require 'Components/head.php';?>
   <!-- /Head -->
 
   <body>

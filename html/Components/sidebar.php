@@ -57,7 +57,7 @@
 
     <ul class="menu-inner py-1">
         <!-- Dashboard -->
-        <li class="menu-item active">
+        <li class="menu-item <?php if($page == 'dashboard'){ echo 'active';}?>">
             <a href="index.php" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
@@ -67,18 +67,18 @@
         <li class="menu-header small text-uppercase active open">
             <span class="menu-header-text">Query</span>
         </li>
-        <li class="menu-item">
+        <li class="menu-item <?php if($active == 'form'){ echo 'active open';}?>">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Account Settings">Form</div>
             </a>
             <ul class="menu-sub">
-                <li class="menu-item">
+                <li class="menu-item <?php if($page == 'service provider'){ echo 'active';}?>">
                     <a href="service-provider.php" class="menu-link">
                         <div data-i18n="Account">Service Provider</div>
                     </a>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item <?php if($page == 'contact Form'){ echo 'active';}?>">
                     <a href="contact-form.php" class="menu-link">
                         <div data-i18n="Notifications">Contact Form</div>
                     </a>
@@ -88,23 +88,23 @@
         <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Category Section</span>
         </li>
-        <li class="menu-item">
+        <li class="menu-item <?php if($active == 'category'){echo 'active open';}?>">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-cube-alt"></i>
                 <div data-i18n="Misc">Category</div>
             </a>
             <ul class="menu-sub">
-                <li class="menu-item">
+                <li class="menu-item <?php if($page == 'list of category'){ echo 'active';}?>">
                     <a href="category-list.php" class="menu-link">
                         <div data-i18n="Error">List of Category</div>
                     </a>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item <?php if($page == 'add category'){ echo 'active';}?>">
                     <a href="add-category.php" class="menu-link">
                         <div data-i18n="Under Maintenance">Add Category</div>
                     </a>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item <?php if($page == 'add product'){ echo 'active';}?>">
                     <a href="pages-misc-under-maintenance.html" class="menu-link">
                         <div data-i18n="Under Maintenance">Add Product</div>
                     </a>

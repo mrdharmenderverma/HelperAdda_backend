@@ -26,7 +26,7 @@ $user_data = array_slice($response_data, 0, 100);
 <html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default"
     data-assets-path="../assets/">
 <!-- Head -->
-<?php $title ='Category List - Helper Adda'; require 'Components/head.php';?>
+<?php $title ='Category List - Helper Adda'; $page = 'service provider'; $active = 'form'; require 'Components/head.php';?>
 <!-- /Head -->
 
 <body>

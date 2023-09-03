@@ -14,10 +14,9 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
   dir="ltr"
   data-theme="theme-default"
   data-assets-path="../assets/"
-  data-template="vertical-menu-template-free"
 >
   <!-- Head -->
-  <?php require 'Components/head.php';?>
+  <?php $page = 'dashboard'; require 'Components/head.php';?>
   <!-- /Head -->
 
   <body>
