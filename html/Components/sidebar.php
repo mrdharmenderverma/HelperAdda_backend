@@ -94,7 +94,7 @@
                 <div data-i18n="Misc">Category</div>
             </a>
             <ul class="menu-sub">
-                <li class="menu-item <?php if($page == 'list of category'){ echo 'active';}?>">
+                <li class="menu-item <?php if($page == 'category list'){ echo 'active';}?>">
                     <a href="category-list.php" class="menu-link">
                         <div data-i18n="Error">List of Category</div>
                     </a>
