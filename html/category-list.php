@@ -73,9 +73,9 @@ $user_data = array_slice($response_data, 0, 100);
                                             <td><i class="fab fa-angular fa-lg text-danger me-3"></i>
                                                 <strong><?php echo $user->id;?></strong></td>
                                             <td><?php echo $user->category;?></td>
-                                            <td><?php $desc = $user->category_desc;  echo wordwrap($desc, 90,"<br>\n");?></td>
+                                            <td><?php $desc = $user->category_desc;  echo wordwrap($desc, 80,"<br>\n");?></td>
                                             <td><img src="<?php echo$user->image?>" alt="Avatar"
-                                                    class="rounded-circle" style="max-width:50%;" /></td>
+                                                    class="" style="max-width:100%;" /></td>
                                             <td><?php if(($user->active) >  0){ echo $inactive = "<span class='badge bg-label-success me-1'>Active</span>"; }else
                                                     {
                                                         echo $active ="<span class='badge bg-label-danger me-1'>InActive</span>";
